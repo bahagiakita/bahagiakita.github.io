@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 40" width="180" height="40" fill="none">
+  <!-- Brand Icon Squircle -->
+  <rect x="2" y="2" width="36" height="36" rx="10" fill="#52634C" />
+  <!-- Subtle inner border -->
+  <rect x="2.5" y="2.5" width="35" height="35" rx="9.5" stroke="#A7C2A7" stroke-width="1" stroke-opacity="0.4" />
+  <!-- Botanical Leaf flourish accent -->
+  <path d="M28 7C25 11 27 15 31 16C31 12 30 8 28 7Z" fill="#E5ECE2" fill-opacity="0.9" />
+  <!-- Elegant Monogram B -->
+  <text x="19" y="27" font-family="'Playfair Display', Georgia, serif" font-size="22" font-style="italic" font-weight="700" fill="#FFFFFF" text-anchor="middle">B</text>
+  <!-- Wordmark Text: Bahagiakita -->
+  <text x="48" y="27" font-family="'Playfair Display', Georgia, serif" font-size="20" font-weight="700" fill="#2D352B" letter-spacing="-0.3">Bahagia<tspan fill="#52634C" font-weight="600">kita</tspan></text>
+</svg>

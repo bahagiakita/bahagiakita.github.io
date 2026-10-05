@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+@variant dark (&:where([data-theme="dark"], [data-theme="dark"] *, .dark, .dark *));
+
+@theme {
+  /* Color Palette: Sage Green Signature */
+  --color-sage-50:  #f4f6f2;
+  --color-sage-100: #e5ece2;
+  --color-sage-200: #cbdbcb;
+  --color-sage-300: #a7c2a7;
+  --color-sage-400: #7e9c7e;
+  --color-sage-500: #52634c; /* Primary Brand Accent */
+  --color-sage-600: #465541;
+  --color-sage-700: #394535;
+  --color-sage-800: #2d352b; /* Text Primary in Light Mode */
+  --color-sage-900: #1b211a;
+
+  /* Accent & Supporting Colors */
+  --color-terracotta-500: #c4876a;
+  --color-gold-500:       #d4af37;
+  --color-cream-100:      #fcfbf7;
+  --color-cream-200:      #e2dcc9;
+
+  /* Neutrals & Surfaces */
+  --color-surface-light: #ffffff;
+  --color-surface-dark:  #181e17;
+  --color-bg-light:       #fbf9f5;
+  --color-bg-dark:        #121612;
+
+  /* Typography */
+  --font-serif:  "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-sans:   "Inter", system-ui, -apple-system, sans-serif;
+  --font-sub:    "Poppins", "Inter", sans-serif;
+  --font-script: "Dancing Script", cursive;
+  --font-mono:   ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  /* Spacing & Radii */
+  --radius-sm:   8px;
+  --radius-md:   12px;
+  --radius-card: 20px;
+  --radius-xl:   28px;
+  --radius-pill: 9999px;
+
+  /* Keyframes & Motion */
+  --animate-float: float 6s ease-in-out infinite alternate;
+  --animate-float-reverse: float-reverse 7s ease-in-out infinite alternate;
+  --animate-pulse-slow: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    100% { transform: translateY(-8px); }
+  }
+  @keyframes float-reverse {
+    0% { transform: translateY(0px); }
+    100% { transform: translateY(8px); }
+  }
+
+  /* Semantic Mappings */
+  --color-border-subtle: var(--color-border-subtle);
+  --shadow-ambient: var(--glow-ambient);
+}
+
+/* Custom Utilities */
+@utility touch-target-safe {
+  min-height: 44px;
+  min-width: 44px;
+  touch-action: manipulation;
+}
+
+@utility glass-nav {
+  background-color: color-mix(in srgb, var(--color-surface-light) 80%, transparent);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+@utility glass-panel {
+  background-color: color-mix(in srgb, var(--color-surface) 60%, transparent);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--color-border-subtle);
+}
+
+@utility text-shadow-subtle {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+@utility safe-inset-top {
+  padding-top: calc(0.75rem + env(safe-area-inset-top));
+}
+
+@utility safe-inset-bottom {
+  padding-bottom: calc(0.75rem + env(safe-area-inset-bottom));
+}
+
+@layer base {
+  :root {
+    --color-surface: var(--color-surface-light);
+    --color-bg: var(--color-bg-light);
+    --color-fg: var(--color-sage-800);
+    --color-border-subtle: color-mix(in srgb, var(--color-sage-200) 60%, transparent);
+    --glow-ambient: 0 8px 32px color-mix(in srgb, var(--color-sage-300) 25%, transparent);
+  }
+
+  :root[data-theme="dark"],
+  .dark {
+    --color-surface: var(--color-surface-dark);
+    --color-bg: var(--color-bg-dark);
+    --color-fg: var(--color-sage-50);
+    --color-border-subtle: color-mix(in srgb, var(--color-sage-800) 60%, transparent);
+    --glow-ambient: 0 8px 32px color-mix(in srgb, var(--color-sage-900) 50%, transparent);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+    min-height: 100dvh;
+  }
+}

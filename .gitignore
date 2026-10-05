@@ -1,0 +1,13 @@
+# Dependencies
+node_modules/
+
+# Agent metadata
+.agents/
+
+# Build and temporary files
+.temp-test-build/
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,1230 @@
+/* ========================================
+   Bahagiakita - Form Styles
+   Mobile-first, simple, elegant, readable
+   ======================================== */
+
+/* --- Base --- */
+.hidden {
+    display: none !important;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: #f8f8f6;
+    color: #333;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- Typography --- */
+.font-heading {
+    font-family: 'Playfair Display', Georgia, serif;
+}
+
+.font-sub {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* --- Form Header --- */
+.form-header {
+    background: #fff;
+    border-bottom: 1px solid #e8e8e5;
+    padding: 20px 16px;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+.form-header h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #5F6F5A;
+    margin: 0 0 2px;
+}
+
+.form-header p {
+    font-size: 13px;
+    color: #888;
+    margin: 0;
+}
+
+/* --- Welcome --- */
+.welcome-section {
+    text-align: center;
+    padding: 24px 0 8px;
+}
+
+.welcome-section h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: #5F6F5A;
+    margin: 0 0 12px;
+}
+
+.welcome-section p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.7;
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+/* --- Section Card --- */
+.form-card {
+    background: #fff;
+    border: 1px solid #e8e8e5;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 16px;
+}
+
+@media (min-width: 768px) {
+    .form-card {
+        padding: 28px;
+        margin-bottom: 20px;
+    }
+}
+
+/* --- Section Header --- */
+.section-header {
+    margin-bottom: 20px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #f0f0ed;
+}
+
+.section-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    color: #2d352b;
+    margin: 0 0 4px;
+}
+
+.section-description {
+    font-size: 13px;
+    color: #888;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.section-helper {
+    font-size: 12px;
+    color: #8B9D83;
+    margin-top: 6px;
+    font-style: italic;
+}
+
+/* --- Labels --- */
+.form-label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: #444;
+    margin-bottom: 6px;
+}
+
+.form-label.required::after {
+    content: " *";
+    color: #e53e3e;
+    font-weight: 400;
+}
+
+/* --- Input Fields --- */
+.form-input,
+.form-textarea,
+.form-select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px; /* Prevents iOS zoom */
+    font-family: 'Inter', sans-serif;
+    color: #333;
+    background: #fff;
+    transition: border-color 0.2s ease;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.form-input:focus,
+.form-textarea:focus,
+.form-select:focus {
+    outline: none;
+    border-color: #8B9D83;
+    box-shadow: 0 0 0 3px rgba(139, 157, 131, 0.12);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+    color: #bbb;
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 100px;
+    line-height: 1.5;
+}
+
+/* Readonly field */
+.form-input[readonly] {
+    background: #f5f5f3;
+    color: #999;
+    cursor: default;
+}
+
+/* --- Field Groups --- */
+.field-group {
+    margin-bottom: 16px;
+}
+
+.field-group:last-child {
+    margin-bottom: 0;
+}
+
+.field-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+}
+
+@media (min-width: 768px) {
+    .field-row-2 {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .field-row-3 {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+/* --- Helper Text --- */
+.field-hint {
+    font-size: 12px;
+    color: #999;
+    margin-top: 4px;
+}
+
+/* --- Error Messages --- */
+.error-message {
+    color: #e53e3e;
+    font-size: 12px;
+    margin-top: 4px;
+    display: none;
+}
+
+.error-message.show {
+    display: block;
+}
+
+.form-input.error,
+.form-textarea.error {
+    border-color: #e53e3e;
+}
+
+.form-input.error:focus,
+.form-textarea.error:focus {
+    box-shadow: 0 0 0 3px rgba(229, 62, 62, 0.1);
+}
+
+/* ========================================
+   Toggle Switch
+   ======================================== */
+.toggle-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 16px;
+    background: #fafaf8;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    gap: 12px;
+}
+
+.toggle-row .toggle-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.toggle-row .toggle-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+}
+
+.toggle-row .toggle-desc {
+    font-size: 12px;
+    color: #999;
+    margin: 2px 0 0;
+}
+
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 48px;
+    height: 28px;
+    flex-shrink: 0;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    inset: 0;
+    background-color: #d4d4d4;
+    transition: 0.25s ease;
+    border-radius: 28px;
+}
+
+.toggle-slider:before {
+    content: "";
+    position: absolute;
+    height: 22px;
+    width: 22px;
+    left: 3px;
+    bottom: 3px;
+    background-color: #fff;
+    transition: 0.25s ease;
+    border-radius: 50%;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+input:checked + .toggle-slider {
+    background-color: #8B9D83;
+}
+
+input:checked + .toggle-slider:before {
+    transform: translateX(20px);
+}
+
+/* ========================================
+   Checkbox Acara (Akad / Resepsi)
+   ======================================== */
+.checkbox-acara {
+    display: flex;
+    align-items: center;
+    padding: 14px 16px;
+    border: 1px solid #e0e0dd;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: border-color 0.2s ease, background 0.2s ease;
+    background: #fff;
+    gap: 12px;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.checkbox-acara:active {
+    background: #f5f7f5;
+}
+
+.checkbox-acara input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.checkbox-custom {
+    position: relative;
+    width: 22px;
+    height: 22px;
+    min-width: 22px;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    background: #fff;
+}
+
+.checkbox-acara input:checked ~ .checkbox-custom {
+    background-color: #8B9D83;
+    border-color: #8B9D83;
+}
+
+.checkbox-custom:after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 6px;
+    top: 2px;
+    width: 6px;
+    height: 11px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.checkbox-acara input:checked ~ .checkbox-custom:after {
+    display: block;
+}
+
+.checkbox-acara:has(input:checked) {
+    border-color: #8B9D83;
+    background: #f8faf7;
+}
+
+.checkbox-acara .cb-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+}
+
+.checkbox-acara .cb-desc {
+    font-size: 12px;
+    color: #999;
+    margin: 2px 0 0;
+}
+
+/* ========================================
+   Sub-section (Conditional)
+   ======================================== */
+.sub-section {
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid #f0f0ed;
+}
+
+.sub-section-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: #5F6F5A;
+    margin: 0 0 16px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f0f0ed;
+}
+
+/* Show/hide animation */
+.section-conditional {
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.section-conditional.hidden {
+    display: none;
+}
+
+.section-conditional.slide-down {
+    animation: slideDown 0.3s ease forwards;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        max-height: 0;
+    }
+    to {
+        opacity: 1;
+        max-height: 2000px;
+    }
+}
+
+/* ========================================
+   Radio Buttons (Jumlah Rekening)
+   ======================================== */
+.radio-group-horizontal {
+    display: flex;
+    gap: 10px;
+}
+
+.radio-option {
+    position: relative;
+    flex: 1;
+}
+
+.radio-option input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.radio-option-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: #fff;
+    font-weight: 500;
+    font-size: 15px;
+    color: #555;
+    min-height: 44px;
+}
+
+.radio-option-label:active {
+    background: #f5f7f5;
+}
+
+.radio-option input:checked + .radio-option-label {
+    background-color: #8B9D83;
+    border-color: #8B9D83;
+    color: #fff;
+}
+
+/* --- Rekening Set --- */
+.rekening-set {
+    padding: 16px;
+    border: 1px solid #e8e8e5;
+    border-radius: 10px;
+    background: #fafaf8;
+}
+
+.rekening-set h4 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #5F6F5A;
+    margin: 0 0 12px;
+}
+
+/* ========================================
+   Upload Zone
+   ======================================== */
+.upload-zone {
+    border: 2px dashed #d4d4d0;
+    border-radius: 10px;
+    padding: 28px 16px;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color 0.2s ease, background 0.2s ease;
+    background: #fcfcfb;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.upload-zone:active {
+    border-color: #8B9D83;
+    background: #f5f7f5;
+}
+
+@media (hover: hover) {
+    .upload-zone:hover {
+        border-color: #8B9D83;
+        background: #f8faf7;
+    }
+}
+
+.upload-zone.drag-over {
+    border-color: #8B9D83;
+    background: #f0f4f1;
+}
+
+.upload-zone-icon {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto 10px;
+    color: #aaa;
+}
+
+.upload-zone-text {
+    font-size: 14px;
+    color: #777;
+    margin: 0 0 4px;
+}
+
+.upload-zone-subtext {
+    font-size: 12px;
+    color: #bbb;
+}
+
+/* --- Photo Preview --- */
+.photo-preview-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-top: 12px;
+}
+
+@media (min-width: 768px) {
+    .photo-preview-grid {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    }
+}
+
+.photo-preview-item {
+    position: relative;
+    aspect-ratio: 1;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #e8e8e5;
+    background: #f5f5f3;
+}
+
+.photo-preview-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.photo-preview-remove {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    line-height: 1;
+    padding: 0;
+}
+
+/* ========================================
+   Submit Button
+   ======================================== */
+.submit-area {
+    padding: 24px 0 0;
+}
+
+.btn-submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 14px 24px;
+    background: #5F6F5A;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    -webkit-tap-highlight-color: transparent;
+    min-height: 52px;
+}
+
+.btn-submit:active {
+    background: #4a5647;
+}
+
+@media (hover: hover) {
+    .btn-submit:hover {
+        background: #4a5647;
+    }
+}
+
+.btn-submit:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+@media (min-width: 768px) {
+    .btn-submit {
+        width: auto;
+        margin: 0 auto;
+        padding: 14px 48px;
+    }
+}
+
+/* ========================================
+   Confirmation Page
+   ======================================== */
+.confirmation-icon {
+    width: 64px;
+    height: 64px;
+    background: #8B9D83;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.confirmation-icon svg {
+    width: 32px;
+    height: 32px;
+    color: #fff;
+}
+
+.btn-wa {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 28px;
+    background: #25D366;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background 0.2s ease;
+    min-height: 48px;
+}
+
+.btn-wa:active {
+    background: #1da851;
+}
+
+/* ========================================
+   Loading Overlay
+   ======================================== */
+.loading-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.loading-overlay.show {
+    display: flex;
+}
+
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ========================================
+   Footer
+   ======================================== */
+.form-footer {
+    text-align: center;
+    padding: 24px 16px;
+    color: #bbb;
+    font-size: 12px;
+}
+
+.form-footer a {
+    color: #8B9D83;
+    text-decoration: none;
+}
+
+/* ========================================
+   Utility: Dot Navigation (desktop only)
+   ======================================== */
+.dot-navigation {
+    display: none;
+}
+
+@media (min-width: 1024px) {
+    .dot-navigation {
+        position: fixed;
+        right: 24px;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        z-index: 100;
+    }
+
+    .dot-nav-item {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #d4d4d0;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+
+    .dot-nav-item:hover {
+        background: #8B9D83;
+    }
+
+    .dot-nav-item.active {
+        background: #8B9D83;
+        transform: scale(1.4);
+    }
+}
+
+/* ========================================
+   Fade-in animation (subtle)
+   ======================================== */
+.section-animate {
+    opacity: 0;
+    transform: translateY(12px);
+    animation: fadeUp 0.4s ease forwards;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========================================
+   Dark Mode Toggle Button
+   ======================================== */
+.dark-toggle {
+    position: fixed;
+    bottom: 24px;
+    right: 20px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    background: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 200;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: background 0.25s, border-color 0.25s, transform 0.15s;
+    -webkit-tap-highlight-color: transparent;
+    padding: 0;
+}
+
+.dark-toggle:active {
+    transform: scale(0.9);
+}
+
+.dark-toggle .icon-sun,
+.dark-toggle .icon-moon {
+    width: 20px;
+    height: 20px;
+}
+
+/* Light mode: show sun */
+.dark-toggle .icon-sun { display: block; color: #999; }
+.dark-toggle .icon-moon { display: none; }
+
+/* ========================================
+   Dark Mode (body.dark-mode)
+   Softer palette — not too dark
+   ======================================== */
+
+body.dark-mode {
+    background-color: #1b1f1b;
+    color: #d5d5d0;
+}
+
+/* Toggle button dark */
+body.dark-mode .dark-toggle {
+    background: #2a2e2a;
+    border-color: #3a3f3a;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+body.dark-mode .dark-toggle .icon-sun { display: none; }
+body.dark-mode .dark-toggle .icon-moon { display: block; color: #c8d4c0; }
+
+/* Header */
+body.dark-mode .form-header { background: #222622; border-bottom-color: #2e332e; }
+body.dark-mode .form-header h1 { color: #b5c4ad; }
+body.dark-mode .form-header p { color: #8a8e85; }
+
+/* Welcome */
+body.dark-mode .welcome-section h2 { color: #b5c4ad; }
+body.dark-mode .welcome-section p { color: #9a9e95; }
+
+/* Cards */
+body.dark-mode .form-card { background: #222622; border-color: #2e332e; }
+
+/* Section header */
+body.dark-mode .section-header { border-bottom-color: #333833; }
+body.dark-mode .section-title { color: #e2e2dd; }
+body.dark-mode .section-description { color: #8a8e85; }
+body.dark-mode .section-helper { color: #95a88d; }
+
+/* Labels */
+body.dark-mode .form-label { color: #c5c5c0; }
+
+/* Inputs */
+body.dark-mode .form-input,
+body.dark-mode .form-textarea,
+body.dark-mode .form-select {
+    background: #2a2e2a;
+    border-color: #3a3f3a;
+    color: #d5d5d0;
+}
+body.dark-mode .form-input:focus,
+body.dark-mode .form-textarea:focus,
+body.dark-mode .form-select:focus {
+    border-color: #8B9D83;
+    box-shadow: 0 0 0 3px rgba(139, 157, 131, 0.18);
+}
+body.dark-mode .form-input::placeholder,
+body.dark-mode .form-textarea::placeholder { color: #606560; }
+body.dark-mode .form-input[readonly] { background: #252925; color: #707570; }
+
+/* Hints */
+body.dark-mode .field-hint { color: #757a75; }
+
+/* Toggle rows */
+body.dark-mode .toggle-row { background: #272b27; border-color: #333833; }
+body.dark-mode .toggle-row .toggle-title { color: #d5d5d0; }
+body.dark-mode .toggle-row .toggle-desc { color: #8a8e85; }
+body.dark-mode .toggle-slider { background-color: #4a4f4a; }
+
+/* Checkbox acara */
+body.dark-mode .checkbox-acara { background: #222622; border-color: #3a3f3a; }
+body.dark-mode .checkbox-acara:active { background: #2a2e2a; }
+body.dark-mode .checkbox-acara:has(input:checked) { border-color: #8B9D83; background: #263026; }
+body.dark-mode .checkbox-custom { background: #2a2e2a; border-color: #555a55; }
+body.dark-mode .checkbox-acara .cb-title { color: #d5d5d0; }
+body.dark-mode .checkbox-acara .cb-desc { color: #8a8e85; }
+
+/* Sub-section */
+body.dark-mode .sub-section { border-top-color: #333833; }
+body.dark-mode .sub-section-title { color: #b5c4ad; border-bottom-color: #333833; }
+
+/* Radio */
+body.dark-mode .radio-option-label { background: #2a2e2a; border-color: #3a3f3a; color: #c5c5c0; }
+body.dark-mode .radio-option-label:active { background: #303530; }
+body.dark-mode .radio-option input:checked + .radio-option-label { background: #6a7b64; border-color: #6a7b64; color: #fff; }
+
+/* Rekening */
+body.dark-mode .rekening-set { background: #272b27; border-color: #333833; }
+body.dark-mode .rekening-set h4 { color: #b5c4ad; }
+
+/* Upload zone */
+body.dark-mode .upload-zone { background: #252925; border-color: #3a3f3a; }
+body.dark-mode .upload-zone:active { border-color: #8B9D83; background: #263026; }
+body.dark-mode .upload-zone-icon { color: #606560; }
+body.dark-mode .upload-zone-text { color: #9a9e95; }
+body.dark-mode .upload-zone-subtext { color: #606560; }
+
+/* Photo preview */
+body.dark-mode .photo-preview-item { background: #2a2e2a; border-color: #3a3f3a; }
+
+/* Submit */
+body.dark-mode .btn-submit { background: #8B9D83; color: #151915; }
+body.dark-mode .btn-submit:active { background: #a0b298; }
+
+/* Confirmation */
+body.dark-mode .confirmation-icon { background: #6a7b64; }
+
+/* Footer */
+body.dark-mode .form-footer { color: #606560; }
+body.dark-mode .form-footer a { color: #95a88d; }
+
+/* Loading */
+body.dark-mode .loading-overlay { background: rgba(0, 0, 0, 0.75); }
+
+/* Error */
+body.dark-mode .form-input.error,
+body.dark-mode .form-textarea.error { border-color: #c53030; }
+body.dark-mode .error-message { color: #fc8181; }
+
+/* Dot nav */
+body.dark-mode .dot-nav-item { background: #4a4f4a; }
+body.dark-mode .dot-nav-item.active { background: #8B9D83; }
+
+/* Hover (desktop) */
+@media (hover: hover) {
+    body.dark-mode .checkbox-acara:hover { border-color: #8B9D83; background: #2a2e2a; }
+    body.dark-mode .upload-zone:hover { border-color: #8B9D83; background: #263026; }
+    body.dark-mode .btn-submit:hover { background: #a0b298; }
+    body.dark-mode .radio-option-label:hover { border-color: #8B9D83; background: #303530; }
+    body.dark-mode .dark-toggle:hover { border-color: #4a4f4a; }
+}
+
+/* Inline overrides */
+body.dark-mode #confirmation-page h2 { color: #b5c4ad !important; }
+body.dark-mode #confirmation-page p { color: #9a9e95 !important; }
+body.dark-mode #confirmation-summary { background: #222622 !important; border-color: #2e332e !important; }
+body.dark-mode #confirmation-summary h3 { color: #b5c4ad !important; border-bottom-color: #333833 !important; }
+body.dark-mode #confirmation-summary #summary-content { color: #c5c5c0 !important; }
+body.dark-mode #confirmation-photos h3 { color: #b5c4ad !important; }
+body.dark-mode #sub-resepsi .sub-section > div:first-child { border-bottom-color: #333833 !important; }
+body.dark-mode #sub-resepsi .sub-section > div:first-child h4 { color: #b5c4ad !important; }
+body.dark-mode #sub-resepsi .sub-section > div:first-child button { color: #95a88d !important; }
+body.dark-mode #sub-gift > div:last-child { border-top-color: #333833 !important; }
+body.dark-mode #sub-gift > div:last-child h4 { color: #b5c4ad !important; }
+
+/* ========================================
+   Preview Page Buttons
+   ======================================== */
+.preview-btn-back {
+    background: #d1d5db;
+    color: #374151;
+    font-weight: 600;
+    padding: 12px 32px;
+    border-radius: 9999px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 15px;
+}
+.preview-btn-back:hover {
+    background: #9ca3af;
+}
+.preview-btn-back:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.preview-btn-confirm {
+    background: #5F6F5A;
+    color: #fff;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 12px 48px;
+    border-radius: 9999px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+.preview-btn-confirm:hover {
+    background: #4a5647;
+    transform: scale(1.03);
+}
+.preview-btn-confirm:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* ========================================
+   Dark Mode — Preview Page
+   ======================================== */
+body.dark-mode #preview-page h2 { color: #b5c4ad !important; }
+body.dark-mode #preview-page p { color: #9a9e95 !important; }
+body.dark-mode #preview-summary { background: #222622 !important; border-color: #2e332e !important; }
+body.dark-mode #preview-summary h3 { color: #b5c4ad !important; border-bottom-color: #333833 !important; }
+body.dark-mode #preview-content { color: #c5c5c0 !important; }
+body.dark-mode #preview-photos h3 { color: #b5c4ad !important; }
+
+/* ========================================
+   Religion Selection Cards
+   ======================================== */
+.religion-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 8px;
+}
+
+@media (min-width: 500px) {
+    .religion-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.religion-card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 14px;
+    border: 1.5px solid #e0e0dd;
+    border-radius: 10px;
+    background: #fff;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: center;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.religion-card input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.religion-card .religion-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: #444;
+    transition: color 0.2s ease;
+}
+
+.religion-card:has(input:checked) {
+    border-color: #5F6F5A;
+    background: #f4f6f2;
+    box-shadow: 0 0 0 1px #5F6F5A;
+}
+
+.religion-card:has(input:checked) .religion-name {
+    color: #5F6F5A;
+    font-weight: 600;
+}
+
+/* ========================================
+   Photo Mode Selection Cards
+   ======================================== */
+.photo-mode-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+@media (min-width: 540px) {
+    .photo-mode-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.photo-mode-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    border: 1.5px solid #e0e0dd;
+    border-radius: 12px;
+    background: #fff;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.photo-mode-card input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.photo-mode-card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 6px;
+}
+
+.photo-mode-icon {
+    width: 22px;
+    height: 22px;
+    color: #5F6F5A;
+    flex-shrink: 0;
+}
+
+.photo-mode-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+}
+
+.photo-mode-desc {
+    font-size: 12.5px;
+    color: #777;
+    line-height: 1.45;
+    margin: 0;
+}
+
+.photo-mode-card:has(input:checked) {
+    border-color: #5F6F5A;
+    background: #f8faf7;
+    box-shadow: 0 0 0 1.5px #5F6F5A;
+}
+
+.photo-mode-card:has(input:checked) .photo-mode-title {
+    color: #5F6F5A;
+}
+
+/* ========================================
+   No Photos Notice Box
+   ======================================== */
+.no-photos-info-card {
+    background: #f5f7f3;
+    border: 1px solid #dbe2d8;
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-top: 12px;
+}
+
+.no-photos-info-card h4 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14.5px;
+    font-weight: 600;
+    color: #5F6F5A;
+    margin: 0 0 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.no-photos-info-card p {
+    font-size: 13px;
+    color: #555;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ========================================
+   Dark Mode — Religion & Photo Mode
+   ======================================== */
+body.dark-mode .religion-card {
+    background: #242924;
+    border-color: #384038;
+}
+body.dark-mode .religion-card .religion-name {
+    color: #d1d5db;
+}
+body.dark-mode .religion-card:has(input:checked) {
+    border-color: #8B9D83;
+    background: #2c352c;
+    box-shadow: 0 0 0 1px #8B9D83;
+}
+body.dark-mode .religion-card:has(input:checked) .religion-name {
+    color: #b5c4ad;
+}
+
+body.dark-mode .photo-mode-card {
+    background: #242924;
+    border-color: #384038;
+}
+body.dark-mode .photo-mode-card .photo-mode-title {
+    color: #e5e7eb;
+}
+body.dark-mode .photo-mode-card .photo-mode-desc {
+    color: #9ca3af;
+}
+body.dark-mode .photo-mode-card:has(input:checked) {
+    border-color: #8B9D83;
+    background: #2c352c;
+    box-shadow: 0 0 0 1.5px #8B9D83;
+}
+body.dark-mode .photo-mode-card:has(input:checked) .photo-mode-title {
+    color: #b5c4ad;
+}
+body.dark-mode .no-photos-info-card {
+    background: #222622;
+    border-color: #333833;
+}
+body.dark-mode .no-photos-info-card h4 {
+    color: #b5c4ad;
+}
+body.dark-mode .no-photos-info-card p {
+    color: #a3a8a0;
+}
+

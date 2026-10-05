@@ -1,0 +1,6 @@
+# Robots.txt for Bahagiakita
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://bahagiakita.com/sitemap.xml

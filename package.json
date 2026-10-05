@@ -1,0 +1,21 @@
+{
+  "name": "web-bahagiakita",
+  "private": true,
+  "version": "2.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "tailwindcss -i src/styles/main.css -o assets/css/main.css --watch",
+    "server": "python3 -m http.server 5500",
+    "start": "concurrently -k --names \"css,server\" --prefix-colors \"blue,green\" --pad-prefix \"npm run dev\" \"npm run server\"",
+    "sttart": "npm start",
+    "build:css": "tailwindcss -i src/styles/main.css -o assets/css/main.css --minify",
+    "build": "npm run build:css",
+    "preview": "npx serve .",
+    "test": "node test/e2e-runner.js"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.3",
+    "concurrently": "^9.2.4",
+    "tailwindcss": "^4.0.0"
+  }
+}
